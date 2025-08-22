@@ -5,13 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Patrulla Pro</title>
     <meta name="description" content="Equipamiento exclusivo para personal policial, militar y de tránsito en Ecuador." />
-    <meta property="og:title" content="Patrulla Pro" />
-    <meta property="og:description" content="Uniformes (acceso restringido), ropa táctica y tecnología profesional. Envíos a todo Ecuador." />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://patrullapro.ec" />
-    <meta property="og:image" content="/og-image.png" />
 
-    <!-- Tailwind por CDN para prototipo rápido -->
+    <!-- Tailwind por CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
@@ -22,15 +17,18 @@
         }
       }
     </script>
-  </head>
-  <body class="bg-[#0B1D3A]">
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
 
-    <!-- Pega tus IDs cuando los tengas
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
-    <script>window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-XXXXXXX');</script>
-    <script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod? n.callMethod.apply(n,arguments):n.queue.push(arguments)}; if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0'; n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t,s)}(window, document,'script','https://connect.facebook.net/en_US/fbevents.js'); fbq('init','PIXEL_ID'); fbq('track','PageView');</script>
-    -->
+    <!-- React + ReactDOM (CDN, modo desarrollo) -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+
+    <!-- Babel para poder usar JSX directamente en el navegador -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+  <body class="bg-[#0B1D3A] text-white">
+    <div id="root"></div>
+
+    <!-- Cargamos nuestra app React escrita en JSX (sin build) -->
+    <script type="text/babel" src="./src/app.jsx"></script>
   </body>
 </html>
